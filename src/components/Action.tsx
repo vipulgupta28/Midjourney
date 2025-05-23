@@ -1,9 +1,10 @@
-import { VortexDemo } from "./vortex";
+import { BackgroundBeamsDemo } from "./beams-bg";
 
 const Action = () =>{
     return(
         <>
-        <VortexDemo/>
+        <BackgroundBeamsDemo/>
+       
         </>
     )
 }
