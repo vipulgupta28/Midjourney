@@ -23,7 +23,7 @@ const Navbar = () => {
       className="group relative cursor-none px-4 py-2 rounded-xl overflow-hidden"
     >
       <span className="relative z-10">{link}</span>
-      <span className="absolute inset-0 bg-white/10 scale-0 group-hover:scale-100 transition-transform duration-300 origin-center rounded-xl z-0"></span>
+      <span className="absolute inset-0 bg-white/20 scale-0 group-hover:scale-100 transition-transform duration-300 origin-center rounded-xl z-0"></span>
     </motion.p>
   ))}
 </div>
