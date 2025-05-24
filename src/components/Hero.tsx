@@ -29,7 +29,7 @@ const Hero = () => {
                             animate={{ y: 0, scale: 1, opacity: 1 }}
                             transition={{
                                 type: "spring",
-                                stiffness: 200,
+                                stiffness: 300,
                                 damping: 20,
                                 mass: 1,
                                 delay: index * 0.1
