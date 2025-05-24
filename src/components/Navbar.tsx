@@ -15,17 +15,19 @@ const Navbar = () => {
 
       {/* Center Navigation */}
       <div className="hidden md:flex gap-8 text-sm font-medium uppercase tracking-widest">
-        {["About", "Showcase", "Career", "FAQ", "Contact"].map((link) => (
-          <motion.p
-            key={link}
-            whileHover={{ scale: 1.1, color: "#999" }}
-            transition={{ type: "spring", stiffness: 300 }}
-            className="cursor-pointer"
-          >
-            {link}
-          </motion.p>
-        ))}
-      </div>
+  {["About", "Showcase", "Career", "FAQ", "Contact"].map((link) => (
+    <motion.p
+      key={link}
+      whileHover={{ scale: 1.05 }}
+      transition={{ type: "spring", stiffness: 300 }}
+      className="group relative cursor-none px-4 py-2 rounded-xl overflow-hidden"
+    >
+      <span className="relative z-10">{link}</span>
+      <span className="absolute inset-0 bg-white/10 scale-0 group-hover:scale-100 transition-transform duration-300 origin-center rounded-xl z-0"></span>
+    </motion.p>
+  ))}
+</div>
+
 
       {/* Right Buttons */}
       <div className="flex items-center gap-6">
