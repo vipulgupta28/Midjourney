@@ -27,7 +27,7 @@ export function BackgroundBeamsDemo() {
       ref={ref}
       className="h-[50rem] w-full relative flex flex-col items-center justify-center bg-black overflow-hidden rounded-md text-white"
     >
-      {/* Background image behind text */}
+
       {showImage && (
         <motion.div
           className="absolute inset-0 z-0 flex items-center justify-center"
@@ -43,7 +43,7 @@ export function BackgroundBeamsDemo() {
         </motion.div>
       )}
 
-      {/* Text Content */}
+
       <motion.div
         className="z-10 text-center px-4"
         initial={{ opacity: 0, y: 40 }}
@@ -93,7 +93,6 @@ export function BackgroundBeamsDemo() {
         </motion.button>
       </motion.div>
 
-      {/* Beams Background */}
       <BackgroundBeams />
     </div>
   );
