@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ThreeDCardDemo } from "./3d-card";
+import { ThreeDCardDemo1 } from "./3d-card1";
+import { ThreeDCardDemo2 } from "./3d-card2";
 import { TextGenerateEffect } from "../ui/text-generate";
 
 const Updates = () => {
@@ -27,23 +28,34 @@ const Updates = () => {
         and a range of new, advanced features.
       </motion.p>
 
-      <div className="flex flex-wrap justify-center gap-2">
-        {[...Array(2)].map((_, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, scale: 0.8, y: 50 }}
-            animate={isInView ? { opacity: 1, scale: 1, y: 0 } : {}}
-            transition={{
-              type: "spring",
-              stiffness: 100,
-              damping: 15,
-              delay: 0.4 + i * 0.2,
-            }}
-          >
-            <ThreeDCardDemo />
-          </motion.div>
-        ))}
-      </div>
+      <div className="flex flex-wrap justify-center gap-4">
+  <motion.div
+    initial={{ opacity: 0, scale: 0.8, y: 50 }}
+    animate={isInView ? { opacity: 1, scale: 1, y: 0 } : {}}
+    transition={{
+      type: "spring",
+      stiffness: 100,
+      damping: 15,
+      delay: 0.4,
+    }}
+  >
+    <ThreeDCardDemo1 />
+  </motion.div>
+
+  <motion.div
+    initial={{ opacity: 0, scale: 0.8, y: 50 }}
+    animate={isInView ? { opacity: 1, scale: 1, y: 0 } : {}}
+    transition={{
+      type: "spring",
+      stiffness: 100,
+      damping: 15,
+      delay: 0.6,
+    }}
+  >
+    <ThreeDCardDemo2 />
+  </motion.div>
+</div>
+
     </div>
   );
 };
