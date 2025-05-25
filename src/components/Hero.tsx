@@ -30,7 +30,7 @@ const paragraph = `We are a small self-funded team focused on design, human infr
     return (
         <div ref={containerRef} className="min-h-[200vh] bg-black relative overflow-hidden">
             
-            {/* Sticky Text */}
+       
             <div className="min-h-screen flex justify-center  sticky top-0">
                 <h1 className="text-[250px] text-white font-extrabold tracking-tight flex">
                     {letters.map((letter, index) => (
@@ -52,12 +52,12 @@ const paragraph = `We are a small self-funded team focused on design, human infr
                 </h1>
             </div>
 
-            {/* Wavy Background Behind Image */}
+        
             <div className="absolute mt-110 inset-0 z-0">
                 <WavyBackgroundDemo />
             </div>
 
-            {/* Animated Image and Text */}
+        
             <motion.div 
                 className="absolute inset-0 flex items-center justify-center pointer-events-none z-10"
                 style={{
@@ -74,8 +74,7 @@ const paragraph = `We are a small self-funded team focused on design, human infr
                     style={{ minHeight: "70vh" }}
                 />
                 
-                {/* Overlay Text */}
-{/* Overlay Text */}
+ 
 <div ref={textRef} id="about" className="absolute mt-[60rem] text-white text-6xl font-bold text-center px-4 z-20">
   {lines.map((line, lineIndex) => (
     <div key={lineIndex} className="overflow-hidden">
