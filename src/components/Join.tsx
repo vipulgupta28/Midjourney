@@ -5,7 +5,7 @@ const Join = () => {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { 
     once: true, 
-    threshold: 0.3,
+    
     margin: "-100px 0px -100px 0px"
   });
 

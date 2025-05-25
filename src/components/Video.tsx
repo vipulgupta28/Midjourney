@@ -5,10 +5,10 @@ import { Play, Pause } from "lucide-react";
 import video from "../assets/videoplayback.mp4";
 
 const Video = () => {
-  const videoRef = useRef(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const isInView = useInView(containerRef, { once: true, threshold: 0.3 });
+  const isInView = useInView(containerRef, { once: true });
 
   const togglePlay = () => {
     const videoEl = videoRef.current;

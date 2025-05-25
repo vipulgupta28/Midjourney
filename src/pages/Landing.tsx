@@ -5,7 +5,7 @@ import Updates from "../components/Updates"
 import Action from "../components/Action"
 import QNA from "../components/QandA"
 import Adhoc from "../components/Adhoc"
-import Join from "../components/join"
+import Join from "../components/Join"
 
 const Landing = () =>{
     return(

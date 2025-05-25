@@ -8,7 +8,6 @@ export function ThreeDCardDemo1() {
   return (
     <CardContainer className="inter-var">
      <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-zinc-900  w-auto sm:w-[45rem] h-[40rem] rounded-xl p-6 border   ">
-        {/* Title */}
         <CardItem
   translateZ="50"
   className="text-5xl font-extrabold text-white text-center leading-tight"
@@ -16,8 +15,6 @@ export function ThreeDCardDemo1() {
   Much more accurate prompts
 </CardItem>
 
-
-        {/* Subtext */}
         <div className="flex justify-center">
           <CardItem
           translateZ="30"
@@ -31,8 +28,6 @@ export function ThreeDCardDemo1() {
 
         </div>
         
-
-        {/* Images Row */}
         <div className="mt-6 flex gap-3">
           <CardItem translateZ="80" className="relative w-1/2">
             <img
@@ -57,7 +52,6 @@ export function ThreeDCardDemo1() {
           </CardItem>
         </div>
 
-        {/* CTA (optional) */}
         <div className="flex justify-between items-center mt-8">
           <CardItem
             translateZ={20}
