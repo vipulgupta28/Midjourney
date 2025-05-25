@@ -1,11 +1,22 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";
 import { WavyBackgroundDemo } from "./waves";
 import image from "../assets/Adobe Express - file (6).png";
 
 const Hero = () => {
+    const lines = [
+  "Midjourney is a research lab",
+  "Focused on innovative",
+  "thinking and enhancing",
+  "human imagination"
+];
+
+const paragraph = `We are a small self-funded team focused on design, human infrastructure and AI. We have 11 full-time staff and an incredible set of advisors.`;
+
     const letters = ['M','i','d','j','o','u','r','n','e','y'];
     const containerRef = useRef(null);
+    const textRef = useRef(null);
+    const isInView = useInView(textRef, { once: true, margin: "-20% 0px" });
 
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -64,17 +75,64 @@ const Hero = () => {
                 />
                 
                 {/* Overlay Text */}
-                <div className="absolute mt-[60rem] text-white text-6xl font-bold text-center px-4 z-20">
-                    Midjourney is a research lab<br/>Focused on innovative<br/>thinking and enhancing<br/>human imagination
-                    <p className="text-gray-400 text-sm pt-5">
-                        We are a small self-funded team focused on design, human<br/>
-                        infrastructure and AI. We have 11 full-time staff and an<br/>
-                        incredible set of advisors
-                    </p>
-                    <button className="bg-lime-400 hover:bg-lime-300 text-black px-5 py-2 rounded-full font-semibold text-sm transition-all duration-300 mt-5">
-                        More info
-                    </button>
-                </div>
+{/* Overlay Text */}
+<div ref={textRef} className="absolute mt-[60rem] text-white text-6xl font-bold text-center px-4 z-20">
+  {lines.map((line, lineIndex) => (
+    <div key={lineIndex} className="overflow-hidden">
+      {line.split(" ").map((word, wordIndex) => (
+        <motion.span
+          key={wordIndex}
+          initial={{ y: 40, opacity: 0 }}
+          animate={isInView ? { y: 0, opacity: 1 } : {}}
+          transition={{
+            type: "spring",
+            stiffness: 200,
+            damping: 20,
+            delay: isInView ? 0.2 * wordIndex + lineIndex * 0.4 : 0
+          }}
+          className="inline-block mr-2"
+        >
+          {word}
+        </motion.span>
+      ))}
+    </div>
+  ))}
+
+  <motion.p
+    className="text-gray-400 text-sm pt-5"
+    initial={{ opacity: 0, y: 20 }}
+    animate={isInView ? { opacity: 1, y: 0 } : {}}
+    transition={{ delay: 2.2, duration: 0.6 }}
+  >
+    {paragraph.split(" ").map((word, i) => (
+      <motion.span
+        key={i}
+        className="inline-block mr-1"
+        initial={{ y: 20, opacity: 0 }}
+        animate={isInView ? { y: 0, opacity: 1 } : {}}
+        transition={{
+          delay: isInView ? 2.3 + i * 0.02 : 0,
+          type: "spring",
+          stiffness: 100,
+          damping: 15,
+        }}
+      >
+        {word}
+      </motion.span>
+    ))}
+  </motion.p>
+
+  <motion.button
+    className="bg-lime-400 hover:bg-lime-300 text-black px-5 py-2 rounded-full font-semibold text-sm transition-all duration-300 mt-5"
+    initial={{ opacity: 0, y: 20 }}
+    animate={isInView ? { opacity: 1, y: 0 } : {}}
+    transition={{ delay: 4, type: "spring" }}
+  >
+    More info
+  </motion.button>
+</div>
+
+
             </motion.div>
         </div>
     );
