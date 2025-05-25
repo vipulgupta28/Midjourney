@@ -16,7 +16,7 @@ const Landing = () =>{
         <Updates/>
         <Action/>
         <QNA/>
-         <Adhoc/>
+        <Adhoc/>
         <Join/>
        
        
