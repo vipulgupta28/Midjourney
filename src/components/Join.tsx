@@ -11,12 +11,11 @@ const Join = () => {
 
   const text = "Join Us";
   const letters = text.split("").map((char, index) => ({
-    char: char === " " ? "\u00A0" : char, // Non-breaking space for proper spacing
+    char: char === " " ? "\u00A0" : char, 
     index,
     isSpace: char === " "
   }));
 
-  // Container animation variants
   const containerVariants = {
     hidden: {},
     visible: {
@@ -27,7 +26,7 @@ const Join = () => {
     }
   };
 
-  // Individual letter animation variants
+
   const letterVariants = {
     hidden: {
       y: 100,
@@ -50,7 +49,6 @@ const Join = () => {
     }
   };
 
-  // Content animation variants
   const contentVariants = {
     hidden: {
       y: 50,
@@ -67,7 +65,7 @@ const Join = () => {
     }
   };
 
-  // Staggered content items
+
   const itemVariants = {
     hidden: {
       y: 30,
@@ -99,7 +97,7 @@ const Join = () => {
       id="contact"
       className="min-h-screen w-full bg-lime-400 mt-6 rounded-2xl flex items-center justify-center px-6 relative overflow-hidden"
     >
-      {/* Subtle background animation */}
+
       <motion.div
         className="absolute inset-0 opacity-10"
         initial={{ scale: 0.8, opacity: 0 }}
@@ -111,7 +109,6 @@ const Join = () => {
       </motion.div>
 
       <div className="flex flex-col items-center text-center space-y-6  relative z-10">
-        {/* Animated "Join Us" heading */}
         <motion.h1 
           className="text-black font-bold text-[40rem] sm:text-[100px] md:text-[150px] lg:text-[400px] leading-none"
           variants={containerVariants}
@@ -140,7 +137,6 @@ const Join = () => {
           ))}
         </motion.h1>
 
-        {/* Animated description paragraph */}
         <motion.p 
           className="text-black text-lg sm:text-xl"
           variants={contentVariants}
@@ -151,7 +147,6 @@ const Join = () => {
           questions in our #support chatrooms.
         </motion.p>
 
-        {/* Animated contact information */}
         <motion.div 
           className="text-black text-lg sm:text-xl space-y-4"
           variants={staggerContainer}
@@ -189,7 +184,6 @@ const Join = () => {
           </motion.p>
         </motion.div>
 
-        {/* Animated decorative elements */}
         <motion.div
           className="absolute -top-10 -left-10 w-6 h-6 bg-black/20 rounded-full"
           initial={{ scale: 0, opacity: 0 }}
