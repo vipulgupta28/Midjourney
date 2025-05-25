@@ -1,29 +1,32 @@
 "use client";
 import { BackgroundBeams } from "../ui/beams";
-import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import { motion, useInView } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
 import image from "../assets/Adobe Express - file (4).png"
 
 export function BackgroundBeamsDemo() {
   const [showImage, setShowImage] = useState(false);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowImage(true);
-    }, 3000); // Wait for text animation (~2s), then 1s pause
-    return () => clearTimeout(timer);
-  }, []);
+    if (isInView) {
+      const timer = setTimeout(() => setShowImage(true), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [isInView]);
 
   const lines = [
     "Create your",
     "First image with",
     "AI",
-   
   ];
 
   return (
-    <div className="h-[50rem] w-full relative flex flex-col items-center justify-center bg-black overflow-hidden rounded-md text-white">
-      
+    <div
+      ref={ref}
+      className="h-[50rem] w-full relative flex flex-col items-center justify-center bg-black overflow-hidden rounded-md text-white"
+    >
       {/* Background image behind text */}
       {showImage && (
         <motion.div
@@ -44,7 +47,7 @@ export function BackgroundBeamsDemo() {
       <motion.div
         className="z-10 text-center px-4"
         initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 1.5, ease: "easeOut" }}
       >
         {lines.map((line, lineIndex) => (
@@ -53,14 +56,16 @@ export function BackgroundBeamsDemo() {
               <motion.span
                 key={wordIndex}
                 initial={{ y: 40, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
+                animate={
+                  isInView ? { y: 0, opacity: 1 } : {}
+                }
                 transition={{
                   type: "spring",
                   stiffness: 200,
                   damping: 20,
                   delay: 0.2 * wordIndex + lineIndex * 0.4
                 }}
-                className=" text-5xl md:text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-t from-neutral-200 to-neutral-600 mb-6 text-center"
+                className="text-5xl md:text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-t from-neutral-200 to-neutral-600 mb-6 text-center"
               >
                 {word}
               </motion.span>
@@ -71,7 +76,7 @@ export function BackgroundBeamsDemo() {
         <motion.p
           className="text-sm text-white mb-6 mt-6"
           initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1.2, delay: 2.5 }}
         >
           Be explicit about what you want. It may be less vibey but if you are<br />
@@ -81,7 +86,7 @@ export function BackgroundBeamsDemo() {
         <motion.button
           className="px-6 py-3 bg-lime-400 text-black font-semibold rounded-full hover:bg-lime-300 transition"
           initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1.2, delay: 2.8 }}
         >
           Start Now
