@@ -18,8 +18,6 @@ const Landing = () =>{
         <QNA/>
         <Adhoc/>
         <Join/>
-       
-       
         </>
     )
 }
