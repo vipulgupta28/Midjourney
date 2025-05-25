@@ -31,7 +31,7 @@ const paragraph = `We are a small self-funded team focused on design, human infr
         <div ref={containerRef} className="min-h-[200vh] bg-black relative overflow-hidden">
             
             {/* Sticky Text */}
-            <div className="min-h-screen flex justify-center items-center sticky top-0">
+            <div className="min-h-screen flex justify-center  sticky top-0">
                 <h1 className="text-[250px] text-white font-extrabold tracking-tight flex">
                     {letters.map((letter, index) => (
                         <motion.span
@@ -99,7 +99,7 @@ const paragraph = `We are a small self-funded team focused on design, human infr
   ))}
 
   <motion.p
-    className="text-gray-400 text-sm pt-5"
+    className="text-white text-sm pt-5"
     initial={{ opacity: 0, y: 20 }}
     animate={isInView ? { opacity: 1, y: 0 } : {}}
     transition={{ delay: 2.2, duration: 0.6 }}
