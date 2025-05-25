@@ -1,49 +1,73 @@
 "use client";
 
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
+import pink from "../assets/Pink-Hair.jpg";
+import jeep from "../assets/jeep.jpg";
 
 export function ThreeDCardDemo2() {
   return (
     <CardContainer className="inter-var">
-      <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-zinc-900  w-auto sm:w-[45rem] h-[40rem] rounded-xl p-6 border  ">
+     <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-zinc-900  w-auto sm:w-[45rem] h-[40rem] rounded-xl p-6 border   ">
+        {/* Title */}
         <CardItem
-          translateZ="50"
-          className="text-4xl font-bold text-neutral-600 dark:text-white"
-        >
-          Minor text drawing ability
+  translateZ="50"
+  className="text-5xl font-extrabold text-white text-center leading-tight"
+>
+  Minor Text for drawing abilities
+</CardItem>
 
-        </CardItem>
+
+        {/* Subtext */}
+        <div className="flex justify-center">
         <CardItem
+          translateZ="30"
           as="p"
-          translateZ="60"
-          className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
+          className="text-neutral-400 text-xs mt-2 max-w-xs text-center"
         >
-          (you must write your text in "quotations" and) <br/> --style raw or lower --stylize values may help <br/>
-          
+          (you must write your text in "quotations" and)--style raw or lower --stylize values
+          may help
         </CardItem>
-        <CardItem translateZ="100" className="w-full mt-4">
-          <img
-            src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            height="1000"
-            width="1000"
-            className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-            alt="thumbnail"
-          />
-        </CardItem>
-        <div className="flex justify-between items-center mt-20">
+        </div>
+
+        {/* Images Row */}
+        <div className="mt-6 flex gap-3">
+          <CardItem translateZ="80" className="relative w-1/2">
+            <img
+              src={pink}
+              className="rounded-xl w-full h-85 object-cover"
+              alt="Lamborghini"
+            />
+            <span className="absolute top-2 left-2 bg-neutral-200 text-black text-xs px-2 py-1 rounded-full font-semibold shadow-sm">
+              New
+            </span>
+          </CardItem>
+
+          <CardItem translateZ="80" className="relative w-1/2">
+            <img
+              src={jeep}
+              className="rounded-xl w-full h-85 object-cover"
+              alt="Gaming"
+            />
+            <span className="absolute bottom-2 left-2 bg-yellow-300 text-black text-xs px-2 py-1 rounded-full font-bold shadow-sm">
+              Prompt
+            </span>
+          </CardItem>
+        </div>
+
+        {/* CTA (optional) */}
+        <div className="flex justify-between items-center mt-8">
           <CardItem
             translateZ={20}
             as="a"
-            href="https://twitter.com/mannupaaji"
-            target="__blank"
-            className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
+            href="#"
+            className="text-sm font-medium text-lime-400 hover:underline"
           >
             Try now →
           </CardItem>
           <CardItem
             translateZ={20}
             as="button"
-            className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
+            className="px-4 py-2 rounded-full bg-white text-black text-xs font-bold shadow"
           >
             Sign up
           </CardItem>

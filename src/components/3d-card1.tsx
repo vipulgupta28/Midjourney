@@ -10,22 +10,27 @@ export function ThreeDCardDemo1() {
      <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-zinc-900  w-auto sm:w-[45rem] h-[40rem] rounded-xl p-6 border   ">
         {/* Title */}
         <CardItem
-          translateZ="50"
-          className="text-5xl font-extrabold text-white text-left leading-tight flex justify-center"
-        >
-          Much more<br />accurate prompts
-        </CardItem>
+  translateZ="50"
+  className="text-5xl font-extrabold text-white text-center leading-tight"
+>
+  Much more accurate prompts
+</CardItem>
+
 
         {/* Subtext */}
-        <CardItem
+        <div className="flex justify-center">
+          <CardItem
           translateZ="30"
           as="p"
-          className="text-neutral-400 text-xs mt-2 max-w-xs text-left"
+          className="text-neutral-400 text-xs mt-2 max-w-xs text-center"
         >
-          Midjourney is an independent research lab<br />
-          exploring new mediums of thought and expanding<br />
+          Midjourney is an independent research lab
+          exploring new mediums of thought and expanding
           the imaginative powers of the human species.
         </CardItem>
+
+        </div>
+        
 
         {/* Images Row */}
         <div className="mt-6 flex gap-3">
