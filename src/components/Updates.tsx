@@ -1,10 +1,14 @@
 import { ThreeDCardDemo } from "./3d-card";
 
+import { TextGenerateEffect } from "../ui/text-generate";
+
 const Updates = () => {
+
+   const words = `Stay ahead with updates`
     return (
         <div className="mt-20 flex flex-col items-center justify-center min-h-screen bg-black text-center px-4">
             <h1 className="text-5xl md:text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-t from-neutral-200 to-neutral-600 mb-6">
-          Stay ahead with<br /> updates
+          <TextGenerateEffect words={words} />
         </h1>
             <p className="text-gray-400 text-lg mb-12 max-w-3xl">
                 The new version boasts improved accuracy, greater coherence,<br className="hidden sm:block" /> 
