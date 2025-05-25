@@ -1,8 +1,8 @@
 "use client";
 import { BackgroundBeams } from "../ui/beams";
 import { motion } from "framer-motion";
-import Image from "../assets/ChatGPT Image May 25, 2025, 02_35_08 PM.png";
 import { useState, useEffect } from "react";
+import image from "../assets/Adobe Express - file (4).png"
 
 export function BackgroundBeamsDemo() {
   const [showImage, setShowImage] = useState(false);
@@ -11,59 +11,78 @@ export function BackgroundBeamsDemo() {
     const timer = setTimeout(() => {
       setShowImage(true);
     }, 3000); // Wait for text animation (~2s), then 1s pause
-
     return () => clearTimeout(timer);
   }, []);
 
+  const lines = [
+    "Create your",
+    "First image with",
+    "AI",
+   
+  ];
+
   return (
     <div className="h-[50rem] w-full relative flex flex-col items-center justify-center bg-black overflow-hidden rounded-md text-white">
+      
       {/* Background image behind text */}
       {showImage && (
         <motion.div
-          className="absolute  rounded-xl z-10 flex items-center justify-center"
+          className="absolute inset-0 z-0 flex items-center justify-center"
           initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
+          animate={{ opacity: 0.9, scale: 1 }}
           transition={{ type: "spring", stiffness: 80 }}
         >
           <img
-            src={Image} // make sure this path is in your public folder
+            src={image}
             alt="Dinosaur"
-            className="rounded-xl h-140 w-140"
+            className="h-200 w-170 object-cover rounded-xl"
           />
         </motion.div>
       )}
 
       {/* Text Content */}
       <motion.div
-        className="z-10 text-center px-4 "
+        className="z-10 text-center px-4"
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
       >
-        <motion.h1
-          className="text-5xl md:text-9xl font-extrabold bg-clip-text text-transparent bg-gradient-to-t from-neutral-200 to-neutral-600 mb-6"
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, delay: 0.3 }}
-        >
-          Create your<br /> first AI image
-        </motion.h1>
+        {lines.map((line, lineIndex) => (
+          <div key={lineIndex} className="overflow-hidden">
+            {line.split(" ").map((word, wordIndex) => (
+              <motion.span
+                key={wordIndex}
+                initial={{ y: 40, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 200,
+                  damping: 20,
+                  delay: 0.2 * wordIndex + lineIndex * 0.4
+                }}
+                className=" text-5xl md:text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-t from-neutral-200 to-neutral-600 mb-6 text-center"
+              >
+                {word}
+              </motion.span>
+            ))}
+          </div>
+        ))}
 
         <motion.p
-          className="text-sm text-white mb-6"
+          className="text-sm text-white mb-6 mt-6"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, delay: 0.6 }}
+          transition={{ duration: 1.2, delay: 2.5 }}
         >
-          Be explicit about what you want. It may be less vibey but is you are <br />
-          Explicit it is MUCH easier to understand you
+          Be explicit about what you want. It may be less vibey but if you are<br />
+          explicit it is MUCH easier to understand you.
         </motion.p>
 
         <motion.button
           className="px-6 py-3 bg-lime-400 text-black font-semibold rounded-full hover:bg-lime-300 transition"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, delay: 0.9 }}
+          transition={{ duration: 1.2, delay: 2.8 }}
         >
           Start Now
         </motion.button>
