@@ -11,6 +11,7 @@ const Updates = () => {
   return (
     <div
       ref={ref}
+      id="career"
       className="mt-20 flex flex-col items-center justify-center min-h-screen bg-black text-center px-4"
     >
       <h1 className="text-5xl md:text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-t from-neutral-200 to-neutral-600 mb-6">

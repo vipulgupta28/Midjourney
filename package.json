@@ -11,12 +11,14 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.7",
+    "@types/react-scroll": "^1.8.10",
     "clsx": "^2.1.1",
     "framer-motion": "^12.12.1",
     "lucide-react": "^0.511.0",
     "motion": "^12.12.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-scroll": "^1.9.3",
     "simplex-noise": "^4.0.3",
     "tailwind-merge": "^3.3.0",
     "tailwindcss": "^4.1.7"

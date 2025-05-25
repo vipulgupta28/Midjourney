@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-scroll";
 
 const Navbar = () => {
   return (
@@ -15,17 +16,33 @@ const Navbar = () => {
 
       {/* Center Navigation */}
       <div className="hidden md:flex gap-8 text-sm font-medium uppercase tracking-widest">
-  {["About", "Showcase", "Career", "FAQ", "Contact"].map((link) => (
-    <motion.p
+  {["About", "Showcase", "Career", "FAQ", "Contact"].map((link) => {
+  const href = `#${link.toLowerCase()}`;
+  return (
+    <motion.a
       key={link}
+      href={href}
       whileHover={{ scale: 1.05 }}
       transition={{ type: "spring", stiffness: 300 }}
-      className="group relative cursor-none px-4 py-2 rounded-xl overflow-hidden"
+      className="group relative cursor-pointer px-4 py-2 rounded-xl overflow-hidden"
     >
-      <span className="relative z-10">{link}</span>
+
+      <Link
+      to={link.toLowerCase()} // id of the section
+      smooth={true}
+      duration={600}
+      offset={-80} // adjust for sticky navbar height
+      className="relative z-10 p-3 hover:cursor-none"
+    >
+      {link}
+    </Link>
+      
+      
       <span className="absolute inset-0 bg-white/20 scale-0 group-hover:scale-100 transition-transform duration-300 origin-center rounded-xl z-0"></span>
-    </motion.p>
-  ))}
+    </motion.a>
+  );
+})}
+
 </div>
 
 

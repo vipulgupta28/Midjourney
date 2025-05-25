@@ -96,6 +96,7 @@ const Join = () => {
   return (
     <div 
       ref={containerRef}
+      id="contact"
       className="min-h-screen w-full bg-lime-400 mt-6 rounded-2xl flex items-center justify-center px-6 relative overflow-hidden"
     >
       {/* Subtle background animation */}

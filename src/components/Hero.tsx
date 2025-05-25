@@ -76,7 +76,7 @@ const paragraph = `We are a small self-funded team focused on design, human infr
                 
                 {/* Overlay Text */}
 {/* Overlay Text */}
-<div ref={textRef} className="absolute mt-[60rem] text-white text-6xl font-bold text-center px-4 z-20">
+<div ref={textRef} id="about" className="absolute mt-[60rem] text-white text-6xl font-bold text-center px-4 z-20">
   {lines.map((line, lineIndex) => (
     <div key={lineIndex} className="overflow-hidden">
       {line.split(" ").map((word, wordIndex) => (
