@@ -8,7 +8,7 @@ export function TabsDemo() {
       title: "What?",
       value: "product",
       content: (
-        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
+        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-black to-violet-900">
           <p>What is this platform about?</p>
           <p className="text-sm md:text-xl font-normal mt-4">
             This platform is designed to provide a space for users to ask questions,
@@ -22,7 +22,7 @@ export function TabsDemo() {
       title: "How?",
       value: "services",
       content: (
-        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
+        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-black to-violet-900">
           <p>How can I contribute?</p>
           <p className="text-sm md:text-xl font-normal mt-4">
             You can contribute by answering questions, sharing helpful insights,
@@ -36,7 +36,7 @@ export function TabsDemo() {
       title: "Is?",
       value: "playground",
       content: (
-        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
+        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-black to-violet-900">
           <p>Is this service free to use?</p>
           <p className="text-sm md:text-xl font-normal mt-4">
             Yes, the core functionality of the platform is completely free for all users.
@@ -49,7 +49,7 @@ export function TabsDemo() {
       title: "How?",
       value: "content",
       content: (
-        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
+        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-black to-violet-900">
           <p>How do I get started?</p>
           <p className="text-sm md:text-xl font-normal mt-4">
             Simply sign up for an account, browse through questions or topics that interest
@@ -63,7 +63,7 @@ export function TabsDemo() {
       title: "What?",
       value: "random",
       content: (
-        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
+        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-black to-violet-900">
           <p>What makes this platform unique?</p>
           <p className="text-sm md:text-xl font-normal mt-4">
             What sets this platform apart is its vibrant and inclusive community, user-friendly
