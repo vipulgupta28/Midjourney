@@ -9,12 +9,12 @@ const Navbar = () => {
       transition={{ duration: 0.8 }}
       className="w-full px-10 py-4 flex justify-between items-center bg-black text-white sticky top-0 z-50"
     >
-      {/* Logo */}
+    
       <Link
       to= "navbar"
       smooth={true}
       duration={600}
-      offset={-80} // adjust for sticky navbar height
+      offset={-80} 
       className="relative z-10 p-3 "
     >
       <div className="text-4xl font-bold tracking-wider hover:cursor-pointer">
@@ -22,7 +22,7 @@ const Navbar = () => {
       </div>
       </Link>
 
-      {/* Center Navigation */}
+ 
       <div id="navbar" className="hidden md:flex gap-8 text-sm font-medium uppercase tracking-widest">
   {["About", "Showcase", "Updates", "FAQ", "Contact"].map((link) => {
   const href = `#${link.toLowerCase()}`;
@@ -36,10 +36,10 @@ const Navbar = () => {
     >
 
       <Link
-      to={link.toLowerCase()} // id of the section
+      to={link.toLowerCase()} 
       smooth={true}
       duration={600}
-      offset={-80} // adjust for sticky navbar height
+      offset={-80} 
       className="relative z-10 p-3 "
     >
       {link}
